@@ -22,5 +22,5 @@ npm install --save-dev ganache-cli        \
     solhint                               \
     solidity-coverage                     \
     jsdoc                                 \
-    ethereumjs-util
+    husky
 
