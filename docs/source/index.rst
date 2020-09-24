@@ -9,7 +9,8 @@ Welcome to Smart Contract Security's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   swc_index.rst
 
 
 Indices and tables
