@@ -1,0 +1,48 @@
+{
+  "name": "smart-contract-security",
+  "version": "1.0.0",
+  "main": " ",
+  "scripts": {
+    "docs": "scripts/docs.sh",
+    "setup:npm": "scripts/npm_setup.sh",
+    "setup:python": "scripts/docs_setup.sh",
+    "setup": "npm run setup:npm && npm run setup:python",
+    "lint": "npm run lint:js && npm run lint:sol && npm run lint:slither",
+    "lint:js": "eslint .",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:slither": "slither . --filter-paths \"contracts/Migrations.sol|contracts/mocks\"",
+    "test": "mocha --exit --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8563a236e65cede7b14220e65c70ad5718144a3/smart-contract-security.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8563a236e65cede7b14220e65c70ad5718144a3/smart-contract-security/issues"
+  },
+  "homepage": "https://github.com/8563a236e65cede7b14220e65c70ad5718144a3/smart-contract-security#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@openzeppelin/test-environment": "^0.1.5",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "chai": "^4.2.0",
+    "eslint": "^7.9.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ethereumjs-util": "^7.0.5",
+    "ganache-cli": "^6.10.2",
+    "ganache-core": "^2.11.3",
+    "jsdoc": "^3.6.6",
+    "mocha": "^8.1.3",
+    "solhint": "^3.2.1",
+    "solidity-coverage": "^0.7.10",
+    "truffle": "^5.1.45"
+  }
+}
