@@ -6,5 +6,6 @@ Smart Contract Weakness Classification
 
    SWC/100-Function-Default-Visibility.rst
    SWC/101-Integer-Overflow-and-Underflow.rst
+   SWC/102-Outdated-Compiler-Version.rst
 
     
