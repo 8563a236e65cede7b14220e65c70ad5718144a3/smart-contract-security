@@ -8,12 +8,6 @@ const HashForEtherVisibilityNotSet =
 const HashForEtherVisibilityNotSetFixed = 
   contract.fromArtifact('HashForEtherVisibilityNotSetFixed');
 
-/**
- * Return the balance of given account
- *
- * @param {string} The address of the account to query
- * @returns {BN} The balance as a BN object
- */
 async function getBal(account) {
   return new BN(await web3.eth.getBalance(account));
 }

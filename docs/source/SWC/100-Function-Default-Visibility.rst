@@ -71,21 +71,26 @@ HashForEtherVisibilityNotSet
 .. code-block:: javascript
    :linenos:
 
-   let initContractBalance = await getBal(notFixed.address);
-   let initAttackerBalance = await getBal(attacker);
+   it(
+      "allows withdrawal from critical function by attacker",
+      async function(){
+      let initContractBalance = await getBal(notFixed.address);
+      let initAttackerBalance = await getBal(attacker);
+      
+      let txReceipt = await notFixed._sendWinnings({from: attacker});
+      let gasUsed = (new BN(txReceipt.receipt.gasUsed)).mul(gasPrice);
         
-   let txReceipt = await notFixed._sendWinnings({from: attacker});
-   let gasUsed = (new BN(txReceipt.receipt.gasUsed)).mul(gasPrice);
-        
-   let expectedAttackerBalance = initAttackerBalance
-                                   .sub(gasUsed)
-                                   .add(initContractBalance);
+      let expectedAttackerBalance = initAttackerBalance
+                                    .sub(gasUsed)
+                                    .add(initContractBalance);
                                         
-   let finalContractBalance = await getBal(notFixed.address);
-   let finalAttackerBalance = await getBal(attacker);
+      let finalContractBalance = await getBal(notFixed.address);
+      let finalAttackerBalance = await getBal(attacker);
         
-   expect(finalContractBalance).to.be.eql(new BN("0"));
-   expect(finalAttackerBalance).to.be.eql(expectedAttackerBalance);
+      expect(finalContractBalance).to.be.eql(new BN("0"));
+      expect(finalAttackerBalance).to.be.eql(expectedAttackerBalance);
+      }
+   );
 
 
 HashForEtherVisibilityNotSetFixed
@@ -94,12 +99,16 @@ HashForEtherVisibilityNotSetFixed
 .. code-block:: javascript
    :linenos:
 
-   let errorReturn = null;
-   try {
-      await fixed._sendWinnings({from: attacker})
-   } catch(err) {
-      errorReturn = err;
-   }
+   it(
+      "does not allow withdrawal from critical function by attacker",
+      async function(){
+         let errorReturn = null;
+         try {
+            await fixed._sendWinnings({from: attacker})
+         } catch(err) {
+            errorReturn = err;
+         }
         
-   expect(errorReturn.message).to.equal("fixed._sendWinnings is not a function")
-
+         expect(errorReturn.message).to.equal("fixed._sendWinnings is not a function")
+      }
+   );
