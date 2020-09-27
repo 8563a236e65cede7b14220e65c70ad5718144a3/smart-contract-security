@@ -8,5 +8,6 @@ Smart Contract Weakness Classification
    SWC/101-Integer-Overflow-and-Underflow.rst
    SWC/102-Outdated-Compiler-Version.rst
    SWC/103-Floating-Pragma.rst
+   SWC/104-Unchecked-Call-Return-Value.rst
 
     
