@@ -49,7 +49,7 @@ describe("100-Function-Default-Visibility", function(){
   describe("HashForEtherVisibilityNotSetFixed", function(){
     let fixed;
     let gasPrice;
-    const [ funder, attacker ] = accounts ;
+    const [ funder, attacker ] = accounts;
     before(async function(){
       fixed = await HashForEtherVisibilityNotSetFixed.new();
       await fixed.send(ether("1"), {from: funder});
