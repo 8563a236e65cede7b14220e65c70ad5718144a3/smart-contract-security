@@ -11,4 +11,6 @@ Smart Contract Weakness Classification
    SWC/104-Unchecked-Call-Return-Value.rst
    SWC/105-Unprotected-Ether-Withdrawal.rst
    SWC/107-Reentrancy.rst
+   SWC/134-Message-Call-Hardcoded-Gas.rst
+
     
