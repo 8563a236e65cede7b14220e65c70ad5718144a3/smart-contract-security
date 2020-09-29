@@ -10,5 +10,5 @@ Smart Contract Weakness Classification
    SWC/103-Floating-Pragma.rst
    SWC/104-Unchecked-Call-Return-Value.rst
    SWC/105-Unprotected-Ether-Withdrawal.rst
-
+   SWC/107-Reentrancy.rst
     

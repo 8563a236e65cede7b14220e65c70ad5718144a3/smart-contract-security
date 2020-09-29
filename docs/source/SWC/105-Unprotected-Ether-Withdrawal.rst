@@ -65,7 +65,7 @@ WalletWrongConstructor
 
 .. code-block:: solidity
    :linenos:
-   :emphasize-lines: 7,35
+   :emphasize-lines: 6,37
  
    contract WalletWrongConstructor {
        address creator;
